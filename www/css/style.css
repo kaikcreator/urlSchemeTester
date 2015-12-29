@@ -1,0 +1,12 @@
+/* Empty. Add your own CSS if you like */
+
+.center-content{
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 100%;
+}
+
+.custom-input{
+	border-radius: 4px;
+}
