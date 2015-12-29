@@ -3,7 +3,7 @@
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
-angular.module('urlSchemeTester', ['ionic'])
+angular.module('urlSchemeTester', ['ionic', 'ngCordova'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -23,7 +23,15 @@ angular.module('urlSchemeTester', ['ionic'])
   });
 })
 
-.controller('ViewController', ['$scope', function($scope){
+.controller('ViewController', ['$scope', '$window', function($scope, $window){
+
+  $scope.urlScheme = "";
+
+  $scope.openURLScheme = function(){
+    if($scope.urlScheme != null && $scope.urlScheme != ""){
+      $window.open($scope.urlScheme, '_system');
+    }
+  }
 
   
 }])
